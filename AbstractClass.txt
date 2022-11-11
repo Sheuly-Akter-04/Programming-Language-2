@@ -1,0 +1,185 @@
+###################
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+
+    virtual void show()=0;
+
+    void greetings()
+    {
+        cout<<"Hello..."<<endl;
+    }
+    virtual void volume()=0;
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(2,6)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    void show()
+    {
+        cout<<"Rectangle class show func"<<endl;
+    }
+    void volume()
+    {
+        cout<<"Volume = "<<height*width*breadth<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1(5);
+    r1.show();
+    r1.greetings();
+    r1.volume();
+}
+
+##############
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+
+    virtual void show()=0;
+
+    void greetings()
+    {
+        cout<<"Hello..."<<endl;
+    }
+    virtual void volume()=0;
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(2,6)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    void show()
+    {
+        cout<<"Rectangle class show func"<<endl;
+    }
+    void volume()
+    {
+        cout<<"Volume = "<<height*width*breadth<<endl;
+    }
+};
+
+int main()
+{
+    Box *b1;
+    Rectangle r1(5);
+    b1=&r1;
+    b1->greetings();
+    b1->show();
+    b1->volume();
+}
+
+#################
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+
+    virtual void show()=0;
+
+    void greetings()
+    {
+        cout<<"Hello..."<<endl;
+    }
+    virtual void volume()=0;
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(2,6)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    void show()
+    {
+        cout<<"Rectangle class show func"<<endl;
+    }
+    void volume()
+    {
+        cout<<"Volume = "<<height*width*breadth<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1(5);
+    Box &b1=r1;
+
+    b1.greetings();
+    b1.show();
+    b1.volume();
+}

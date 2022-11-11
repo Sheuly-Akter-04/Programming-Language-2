@@ -1,0 +1,150 @@
+###########
+#include <iostream>
+using namespace std;
+
+void swapValues(int a, int b);
+
+int main()
+{
+    int m,n;
+    cout<<"Enter two values: ";
+    cin>>m>>n;
+    swapValues(m,n);
+    cout<<"In main function: "<<endl;
+    cout<<m<<" "<<n<<endl;
+}
+
+void swapValues(int a, int b)
+{
+    int t;
+    t=a;
+    a=b;
+    b=t;
+    cout<<"In swap function"<<endl;
+    cout<<a<<" "<<b<<endl;
+}
+
+######Using Pointer Variable######
+#include <iostream>
+using namespace std;
+
+void swapValues(int *a, int *b);
+
+int main()
+{
+    int m,n;
+    cout<<"Enter two values: ";
+    cin>>m>>n;
+    swapValues(&m,&n);
+    cout<<"In main function: "<<endl;
+    cout<<m<<" "<<n<<endl;
+}
+
+void swapValues(int *a, int *b)
+{
+    int t;
+    t=*a;
+    *a=*b;
+    *b=t;
+    cout<<"In swap function"<<endl;
+    cout<<*a<<" "<<*b<<endl;
+}
+
+#######using Reference variable#########
+
+#include <iostream>
+using namespace std;
+
+void swapValues(int &a, int &b);
+
+int main()
+{
+    int m,n;
+    cout<<"Enter two values: ";
+    cin>>m>>n;
+    swapValues(m,n);
+    cout<<"In main function: "<<endl;
+    cout<<m<<" "<<n<<endl;
+}
+
+void swapValues(int &a, int &b)
+{
+    int t;
+    t=a;
+    a=b;
+    b=t;
+    cout<<"In swap function"<<endl;
+    cout<<a<<" "<<b<<endl;
+}
+
+#############
+#include <iostream>
+using namespace std;
+
+void sum(int a, int b);
+double sum(double a,double b);
+
+int main()
+{
+   sum(3,7);
+   cout<<sum(5.1,9.7)<<endl;
+}
+
+void sum(int a, int b)
+{
+    cout<<a+b<<endl;
+}
+double sum(double a,double b)
+{
+    return a+b;
+}
+
+################
+#include <iostream>
+using namespace std;
+
+void sum(int a, int b);
+double sum(double a);
+
+int main()
+{
+   sum(3,7);
+   cout<<sum(5.1)<<endl;
+}
+
+void sum(int a, int b)
+{
+    cout<<a+b<<endl;
+}
+double sum(double a)
+{
+    return a+a;
+}
+
+#############
+#include <iostream>
+using namespace std;
+
+void print(int a, float b,char c);
+void print(char c, int a, float b);
+void print(int a, char b);
+
+int main()
+{
+   print(4,'a');
+   print('r',5,7.3);
+   print(6,9.3,'b');
+}
+
+void print(int a, float b,char c)
+{
+    cout<<a<<" "<<b<<" "<<c<<endl;
+}
+void print(char c, int a, float b)
+{
+    cout<<c<<" "<<a<<" "<<b<<endl;
+}
+void print(int a, char b)
+{
+    cout<<a<<" "<<b<<endl;
+}

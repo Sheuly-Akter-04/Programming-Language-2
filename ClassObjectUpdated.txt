@@ -1,0 +1,332 @@
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues();
+    void getValues();
+};
+
+void Student::setValues()
+{
+    cout<<"Enter Student ID: ";
+    cin>>id;
+    cout<<"Enter Student Name: ";
+    cin>>name;
+    cout<<"Enter Credit: ";
+    cin>>credit;
+    cout<<"Enter CGPA: ";
+    cin>>cgpa;
+}
+
+void Student::getValues()
+{
+    cout<<"ID: "<<id<<endl;
+    cout<<"Name: "<<name<<endl;
+    cout<<"Credit: "<<credit<<endl;
+    cout<<"CGPA: "<<cgpa<<endl;
+}
+
+int main()
+{
+    Student s1,s2;
+    s1.setValues();
+    s2.setValues();
+    s1.getValues();
+    s2.getValues();
+}
+
+###########Object Array########
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues();
+    void getValues();
+};
+
+void Student::setValues()
+{
+    cout<<"Enter ID: ";
+    cin>>id;
+    cout<<"Enter Name: ";
+    cin>>name;
+    cout<<"Enter Credit: ";
+    cin>>credit;
+    cout<<"Enter CGPA: ";
+    cin>>cgpa;
+}
+
+void Student::getValues()
+{
+   cout<<"ID: "<<id<<endl;
+   cout<<"Name: "<<name<<endl;
+   cout<<"Credit: "<<credit<<endl;
+   cout<<"CGPA: "<<cgpa<<endl;
+}
+
+int main()
+{
+    Student s1[5];
+    int i;
+    for(i=0;i<5;i++)
+    {
+        s1[i].setValues();
+    }
+    for(i=0;i<5;i++)
+    {
+        s1[i].getValues();
+        cout<<endl;
+    }
+
+}
+
+############
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues()
+    {
+        cout<<"Enter ID: ";
+        cin>>id;
+        cout<<"Enter Name: ";
+        cin>>name;
+        cout<<"Enter Credit: ";
+        cin>>credit;
+        cout<<"Enter CGPA: ";
+        cin>>cgpa;
+    }
+    void getValues();
+};
+
+
+
+void Student::getValues()
+{
+    cout<<"ID= "<<id<<endl;
+    cout<<"Name= "<<name<<endl;
+    cout<<"CGPA= "<<cgpa<<endl;
+    cout<<"Credit= "<<credit<<endl;
+}
+
+int main()
+{
+    Student s1;
+    s1.setValues();
+    s1.getValues();
+}
+
+###############
+
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues();
+    void getValues()
+    {
+        cout<<"ID= "<<id<<endl;
+        cout<<"Name= "<<name<<endl;
+        cout<<"Credit= "<<credit<<endl;
+        cout<<"CGPA= "<<cgpa<<endl;
+    }
+};
+
+void Student::setValues()
+{
+    cout<<"Enter ID: ";
+    cin>>id;
+    cout<<"Enter Name: ";
+    cin.ignore();
+    getline(cin,name);
+    cout<<"Enter Credit: ";
+    cin>>credit;
+    cout<<"Enter CGPA: ";
+    cin>>cgpa;
+}
+
+int main()
+{
+    Student s1;
+    s1.setValues();
+    s1.getValues();
+}
+
+
+##############
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues(int i,string nm,int cr,float cg)
+    {
+        id=i;
+        name=nm;
+        credit=cr;
+        cgpa=cg;
+    }
+    void getValues()
+    {
+        cout<<"ID= "<<id<<endl;
+        cout<<"Name= "<<name<<endl;
+        cout<<"CGPA= "<<cgpa<<endl;
+        cout<<"Credit= "<<credit<<endl;
+    }
+};
+
+int main()
+{
+    Student s1,s2;
+    s1.setValues(234,"Sumaiya",33,3.78);
+    s1.getValues();
+    s2.setValues(12,"Tahsin",53,3.98);
+    s2.getValues();
+}
+
+#############
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues(int i,string nm,int cr,float cg)
+    {
+        id=i;
+        name=nm;
+        credit=cr;
+        cgpa=cg;
+    }
+    void getValues()
+    {
+        cout<<"ID= "<<id<<endl;
+        cout<<"Name= "<<name<<endl;
+        cout<<"CGPA= "<<cgpa<<endl;
+        cout<<"Credit= "<<credit<<endl;
+    }
+};
+
+int main()
+{
+    Student s[5];
+    string n;
+    int id,c,i;
+    float res;
+
+    for(i=0;i<5;i++)
+    {
+        cout<<"Enter ID: ";
+        cin>>id;
+        cin.ignore();
+        cout<<"Enter Name: ";
+        getline(cin,n);
+        cout<<"Enter CGPA: ";
+        cin>>res;
+        cout<<"Enter Credit: ";
+        cin>>c;
+        s[i].setValues(id,n,c,res);
+    }
+    cout<<endl;
+    for(i=0;i<5;i++)
+    {
+        s[i].getValues();
+        cout<<endl;
+    }
+
+}
+
+##############
+#include <iostream>
+using namespace std;
+
+class Student
+{
+    int id;
+    string name;
+    int credit;
+    float cgpa;
+public:
+    void setValues(int i,string nm,int cr,float cg)
+    {
+        id=i;
+        name=nm;
+        credit=cr;
+        cgpa=cg;
+    }
+    void getValues()
+    {
+        cout<<"ID= "<<id<<endl;
+        cout<<"Name= "<<name<<endl;
+        cout<<"CGPA= "<<cgpa<<endl;
+        cout<<"Credit= "<<credit<<endl;
+    }
+};
+
+int main()
+{
+    Student s[50];
+    string n;
+    int id,c,i=0,ct;
+    float res;
+    char ch;
+
+    do
+    {
+        cout<<"Enter ID: ";
+        cin>>id;
+        cin.ignore();
+        cout<<"Enter Name: ";
+        getline(cin,n);
+        cout<<"Enter CGPA: ";
+        cin>>res;
+        cout<<"Enter Credit: ";
+        cin>>c;
+        s[i].setValues(id,n,c,res);
+
+        cout<<"Do you want to enter more?[y/n]: ";
+        cin>>ch;
+        i++;
+    }while(ch!='n');
+
+    for(ct=0;ct<i;ct++)
+    {
+        s[ct].getValues();
+    }
+
+}

@@ -1,0 +1,176 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float a;
+    cout<<"Before Try Block"<<endl;
+    try
+    {
+        a=5.2;
+        cout<<a<<endl;
+        throw a;
+        cout<<"After exception is thrown"<<endl;
+    }
+    catch(float e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    catch(int e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    cout<<"Hello"<<endl;
+    cout<<"How are you?"<<endl;
+}
+
+############
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string a;
+    cout<<"Before Try Block"<<endl;
+    try
+    {
+        a="AIUB";
+        cout<<a<<endl;
+        throw a;
+        cout<<"After exception is thrown"<<endl;
+    }
+    catch(float e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    catch(int e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    catch(string e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    cout<<"Hello"<<endl;
+    cout<<"How are you?"<<endl;
+}
+
+###############
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"Before Try Block"<<endl;
+    try
+    {
+        throw '*';
+        cout<<"After exception is thrown"<<endl;
+    }
+
+    catch(float e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    catch(int e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    catch(string e)
+    {
+        cout<<"In catch"<<endl;
+        cout<<e<<endl;
+    }
+    catch(...)
+    {
+        cout<<"Catch All"<<endl;
+    }
+    
+    cout<<"Hello"<<endl;
+    cout<<"How are you?"<<endl;
+}
+
+#################
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cout<<"Enter value for a and b: ";
+    cin>>a>>b;
+
+    try
+    {
+        if(b==0)
+        {
+            throw "Divided by zero is not possible";
+            cout<<a<<" "<<b<<endl;
+        }
+        else
+        {
+            cout<<"Result: "<<a/b<<endl;
+        }
+    }
+    catch(int e)
+    {
+        cout<<"Caught"<<endl;
+        cout<<e<<endl;
+    }
+    catch(const char* e)
+    {
+        cout<<"Caught"<<endl;
+        cout<<e<<endl;
+    }
+}
+
+################
+
+#include <iostream>
+using namespace std;
+
+void division(int a, int b)
+{
+    if(b==0)
+        {
+            throw "Divided by zero is not possible";
+            cout<<a<<" "<<b<<endl;
+        }
+        else
+        {
+            cout<<"Result: "<<a/b<<endl;
+        }
+}
+
+int main()
+{
+    int n1,n2;
+    cout<<"Enter value for a and b: ";
+    cin>>n1>>n2;
+
+    try
+    {
+        division(n1,n2);
+    }
+    catch(int e)
+    {
+        cout<<"Caught"<<endl;
+        cout<<e<<endl;
+    }
+    catch(const char* e)
+    {
+        cout<<"Caught"<<endl;
+        cout<<e<<endl;
+    }
+}
+
+##############

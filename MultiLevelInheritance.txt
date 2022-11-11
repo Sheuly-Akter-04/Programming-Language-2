@@ -1,0 +1,439 @@
+###############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void area()
+    {
+        cout<<"Area= "<<height*width<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+protected: 
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+class Square:public Rectangle
+{
+    int a;
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    Square(int m)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=m;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+    void multiply()
+    {
+        cout<<height*width*breadth*a<<endl;
+    }
+}; 
+
+int main()
+{
+    Square s1;
+    Rectangle r1;
+    cout<<"Hello"<<endl;
+} 
+###################
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void area()
+    {
+        cout<<"Area= "<<height*width<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+protected:
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(4,7)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+class Square:public Rectangle
+{
+    int a;
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    Square(int m):Rectangle(m)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=m;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+    void multiply()
+    {
+        cout<<height*width*breadth*a<<endl;
+    }
+};
+
+int main()
+{
+    Square s1(5);
+    cout<<"Hello"<<endl;
+}
+
+##################
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    static int Count;
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+        Count++;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+        Count++;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void area()
+    {
+        cout<<"Area= "<<height*width<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+protected:
+    int breadth;
+public:
+    static int Count;
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+        Count++;
+    }
+    Rectangle(int b):Box(4,7)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+        Count++;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+class Square:public Rectangle
+{
+    int a;
+public:
+    static int Count;
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+        Count++;
+    }
+    Square(int m):Rectangle(m)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=m;
+        Count++;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+    void multiply()
+    {
+        cout<<height*width*breadth*a<<endl;
+    }
+};
+
+int Box::Count=0;
+int Rectangle::Count=0;
+int Square::Count=0;
+
+int main()
+{
+    Square s1(5),s2;
+    Rectangle r1;
+    Box b1,b2;
+
+    cout<<"Number of Box Class Object: "<<Box::Count<<endl;
+    cout<<"Number of Rectangle Class Object: "<<Rectangle::Count<<endl;
+    cout<<"Number of Square Class Object: "<<Square::Count<<endl;
+    s1.multiply();
+}
+
+##########Diamond Problem#########
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void area()
+    {
+        cout<<"Area= "<<height*width<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+protected:
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(4,7)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+class Square:public Box
+{
+    int a;
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    Square(int m)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=m;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+};
+
+class Circle:public Rectangle,public Square
+{
+    int radius;
+public:
+    Circle()
+    {
+        cout<<"Circle Default Constructor"<<endl;
+    }
+    Circle(int r)
+    {
+        cout<<"Circle Parameterized Constructor"<<endl;
+        radius=r;
+    }
+    ~Circle()
+    {
+        cout<<"Circle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Circle c1;
+}
+
+############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void area()
+    {
+        cout<<"Area= "<<height*width<<endl;
+    }
+};
+
+class Rectangle:virtual public Box
+{
+protected:
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(4,7)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+class Square:virtual public Box
+{
+    int a;
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    Square(int m):Box(m,8)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=m;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+};
+
+class Circle:public Square,public Rectangle
+{
+    int radius;
+public:
+    Circle()
+    {
+        cout<<"Circle Default Constructor"<<endl;
+    }
+    Circle(int r):Rectangle(r),Square(5),Box(3,9)
+    {
+        cout<<"Circle Parameterized Constructor"<<endl;
+        radius=r;
+    }
+    ~Circle()
+    {
+        cout<<"Circle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Circle c1(6);
+}

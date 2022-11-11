@@ -1,0 +1,383 @@
+###########
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height, width;
+public:
+    Box()
+    {
+        cout<<"Box Constructor"<<endl;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+public:
+    void area()
+    {
+        height=5;
+        width=2;
+        cout<<height*width<<endl;
+    }
+    Rectangle()
+    {
+        cout<<"Rectangle Constructor"<<endl;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1;
+    Box b1;
+    r1.area();
+}
+
+###########
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height, width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+    void area()
+    {
+        height=5;
+        width=2;
+        cout<<height*width<<endl;
+    }
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(23,8)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1(5);
+    Box b1(4,6);
+}
+
+#####################
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height, width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+class Square
+{
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+};
+
+class Rectangle:public Square,public Box
+{
+    int breadth;
+public:
+    void area()
+    {
+        height=5;
+        width=2;
+        cout<<height*width<<endl;
+    }
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(23,8)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1;
+}
+
+#############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height, width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+class Square
+{
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+};
+
+class Rectangle:public Square,public Box
+{
+    int breadth;
+public:
+    void area()
+    {
+        height=5;
+        width=2;
+        cout<<height*width<<endl;
+    }
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(23,8)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1(4);
+}
+
+#####################3
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height, width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+class Square
+{
+    int a,b;
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    Square(int c,int d)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=c;
+        b=d;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+};
+
+class Rectangle:public Square,public Box
+{
+    int breadth;
+public:
+    void area()
+    {
+        height=5;
+        width=2;
+        cout<<height*width<<endl;
+    }
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Box(23,8),Square(b,45)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1(4);
+}
+
+###############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+protected:
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+
+class Square
+{
+    int a,b;
+public:
+    Square()
+    {
+        cout<<"Square Default Constructor"<<endl;
+    }
+    Square(int c, int d)
+    {
+        cout<<"Square Parameterized Constructor"<<endl;
+        a=c;
+        b=d;
+    }
+    ~Square()
+    {
+        cout<<"Square Destructor"<<endl;
+    }
+};
+
+class Rectangle:public Square,public Box
+{
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b):Square(3,7)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+
+    void volume()
+    {
+        cout<<height*width*breadth<<endl;
+    }
+};
+
+int main()
+{
+    Rectangle r1(5);
+}
+

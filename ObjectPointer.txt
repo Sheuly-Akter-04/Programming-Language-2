@@ -1,0 +1,396 @@
+#############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void show()
+    {
+        cout<<"Box class show func"<<endl;
+    }
+};
+
+class Rectangle
+{
+    int breadth;
+public:
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+    void print()
+    {
+        cout<<"Rectangle class print func"<<endl;
+    }
+};
+
+int main()
+{
+    Box b1,*b2;
+    Rectangle r1,*r2;
+
+    b2=&b1;
+    r2=&r1;
+
+    b1.show();
+    b2->show();
+
+    r1.print();
+    r2->print();
+}
+
+#################
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    virtual void show()
+    {
+        cout<<"Box class show func"<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+
+    void show()
+    {
+        cout<<"Rectangle Class show func"<<endl;
+    }
+
+    void print()
+    {
+        cout<<"Rectangle class print func"<<endl;
+    }
+};
+
+int main()
+{
+    Box b1,*b2;
+    Rectangle r1;
+    b2=&r1;
+    b2->show();
+
+}
+
+################
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    virtual void show()
+    {
+        cout<<"Box class show func"<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+
+    void show()
+    {
+        cout<<"Rectangle Class show func"<<endl;
+    }
+    void print()
+    {
+        cout<<"Rectangle class print func"<<endl;
+    }
+};
+
+class Circle:public Rectangle
+{
+    int radius;
+public:
+    Circle()
+    {
+        cout<<"Circle Default Constructor"<<endl;
+    }
+    Circle(int r)
+    {
+        cout<<"Circle Parameterized Constructor"<<endl;
+        radius=r;
+    }
+    ~Circle()
+    {
+        cout<<"Circle Destructor"<<endl;
+    }
+    void show()
+    {
+        cout<<"In Circle class show func"<<endl;
+    }
+};
+
+int main()
+{
+    Box b1,*b2;
+    Rectangle r1;
+    Circle c1;
+    b2=&c1;
+    b2->show();
+}
+
+############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    virtual void show()
+    {
+        cout<<"Box class show func"<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+    
+
+    void print()
+    {
+        cout<<"Rectangle class print func"<<endl;
+    }
+};
+
+class Circle:public Rectangle
+{
+    int radius;
+public:
+    Circle()
+    {
+        cout<<"Circle Default Constructor"<<endl;
+    }
+    Circle(int r)
+    {
+        cout<<"Circle Parameterized Constructor"<<endl;
+        radius=r;
+    }
+    ~Circle()
+    {
+        cout<<"Circle Destructor"<<endl;
+    }
+    void show()
+    {
+        cout<<"In Circle class show func"<<endl;
+    }
+};
+
+int main()
+{
+    Box b1,*b2;
+    Rectangle r1;
+    Circle c1;
+    b2=&c1;
+    b2->show();
+}
+
+###############
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height,width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+    void show()
+    {
+        cout<<"Box class show func"<<endl;
+    }
+};
+
+class Rectangle:public Box
+{
+    int breadth;
+public:
+
+    Rectangle()
+    {
+        cout<<"Rectangle Default Constructor"<<endl;
+    }
+    Rectangle(int b)
+    {
+        cout<<"Rectangle Parameterized Constructor"<<endl;
+        breadth=b;
+    }
+    ~Rectangle()
+    {
+        cout<<"Rectangle Destructor"<<endl;
+    }
+    void show()
+    {
+        cout<<"Rectangle Class show func"<<endl;
+    }
+
+    void print()
+    {
+        cout<<"Rectangle class print func"<<endl;
+    }
+};
+
+class Circle:public Rectangle
+{
+    int radius;
+public:
+    Circle()
+    {
+        cout<<"Circle Default Constructor"<<endl;
+    }
+    Circle(int r)
+    {
+        cout<<"Circle Parameterized Constructor"<<endl;
+        radius=r;
+    }
+    ~Circle()
+    {
+        cout<<"Circle Destructor"<<endl;
+    }
+    void show()
+    {
+        cout<<"In Circle class show func"<<endl;
+    }
+};
+
+int main()
+{
+    Box b1,*b2;
+    Rectangle r1;
+    Circle c1;
+    b2=&c1;
+    b2->show();
+}

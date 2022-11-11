@@ -1,0 +1,79 @@
+###############
+
+#include<iostream>
+using namespace std;
+
+void test()
+{
+    static int a=0;
+    a++;
+    cout<<a<<endl;
+}
+int main()
+{
+   test();
+   test();
+   test();
+}
+
+#################
+#include <iostream>
+using namespace std;
+
+class Rectangle
+{
+    float height,width;
+    int breadth;
+public:
+    static int Count;
+    Rectangle()
+    {
+        Count++;
+        cout<<"Default Constructor"<<endl;
+        height=0;
+        width=0;
+        breadth=0;
+    }
+    ~Rectangle()
+    {
+       cout<<"Destroyed..."<<endl;
+    }
+    Rectangle(float h, float w, int b)
+    {
+        Count++;
+        cout<<"Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+        breadth=b;
+    }
+    Rectangle(float w,int b)
+    {
+        Count++;
+        cout<<"Parameterized Constructor"<<endl;
+        height=0;
+        width=w;
+        breadth=b;
+    }
+
+    void setValues(float h,float w, int b)
+    {
+        height=h;
+        width=w;
+        breadth=b;
+    }
+    void getValues()
+    {
+        cout<<"Height= "<<height<<endl;
+        cout<<"Width= "<<width<<endl;
+        cout<<"Breadth= "<<breadth<<endl;
+    }
+};
+
+int Rectangle::Count=0;
+
+int main()
+{
+   Rectangle r1,r2,r3(4.3,6.4,7);
+   cout<<"Number of Object: "<<Rectangle::Count<<endl;
+}
+

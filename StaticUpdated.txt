@@ -1,0 +1,113 @@
+#############Static############
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height, width;
+public:
+    static int Count;
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+        Count++;
+    }
+
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+        Count++;
+    }
+};
+
+class Triangle
+{
+    int base;
+public:
+    static int Count;
+    Triangle()
+    {
+        cout<<"Triangle Default Constructor"<<endl;
+        Count++;
+    }
+    Triangle(int b)
+    {
+        cout<<"Triangle Parameterized Constructor"<<endl;
+        base=b;
+        Count++;
+    }
+};
+
+int Box::Count=0;
+int Triangle::Count=0;
+
+int main()
+{
+    Box b1,b2,b3(3,5),b4;
+    cout<<"No. of objects in Box Class: "<<Box::Count<<endl;
+    Triangle t1,t2(7),t3,t4;
+    cout<<"No. of Objects in Triangle class: "<<Triangle::Count<<endl;
+    cout<<"Total: "<<Box::Count+Triangle::Count<<endl;
+}
+
+############Static Object############
+
+#include <iostream>
+using namespace std;
+
+class Box
+{
+    int height, width;
+public:
+    Box()
+    {
+        cout<<"Box Default Constructor"<<endl;
+    }
+    Box(int h, int w)
+    {
+        cout<<"Box Parameterized Constructor"<<endl;
+        height=h;
+        width=w;
+    }
+    ~Box()
+    {
+        cout<<"Box Destructor"<<endl;
+    }
+};
+
+class Triangle
+{
+    int base;
+public:
+    Triangle()
+    {
+        cout<<"Triangle Default Constructor"<<endl;
+
+    }
+    Triangle(int b)
+    {
+        cout<<"Triangle Parameterized Constructor"<<endl;
+        base=b;
+
+    }
+    ~Triangle()
+    {
+        cout<<"Triangle Destructor"<<endl;
+    }
+};
+
+int main()
+{
+   int a=5;
+   Box b1,b2;
+   if(a<10)
+   {
+       static Box b3;
+       cout<<"Hello"<<endl;
+   }
+   cout<<"Study Hard"<<endl;
+}
+
